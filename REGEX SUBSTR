@@ -1,0 +1,22 @@
+   FOR i IN (
+      SELECT 
+         TRIM(REGEXP_SUBSTR(:COMPANY_ID, '[^:]+', 1, LEVEL)) AS V_level_1
+      FROM dual
+      CONNECT BY LEVEL <= REGEXP_COUNT(:COMPANY_ID, ':') + 1
+   )
+   LOOP
+      IF i.V_level_1 IS NOT NULL THEN
+         INSERT INTO AB_PO_DEMAND_REQ_DET (
+            IDS,
+            ITEM_ID,
+            STATUS,
+            DET_STATUS
+         ) 
+         VALUES (
+            :P332_DET_ID_1,
+            i.V_level_1,
+            'Y',
+            'FR ITEM DET'
+         );
+      END IF;
+   END LOOP;

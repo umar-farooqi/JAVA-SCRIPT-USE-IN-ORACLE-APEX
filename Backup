@@ -8,7 +8,7 @@ where status = 'TRANSFERRED'
 GROUP BY DEALER_ID
 
  
-===============================
+==============================
 
 update DGMS_CLIENT_REMARKS
 set  final_reminder = null;

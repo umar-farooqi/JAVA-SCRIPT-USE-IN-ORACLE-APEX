@@ -8,7 +8,7 @@ javascript:var po_id = $v("P73_PO_ID");window.open("f?p=&APP_ID.:0:&SESSION.:PRI
 javascript:$s('P27_DETAILS','#ID#'); openModal('DET'); 
   
 class="t-Button t-Button--simple t-Button--hot t-Button--stretch" 
-  
+
   
 ======================================================
 this code link in other page 

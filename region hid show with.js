@@ -1,0 +1,779 @@
+//var savepos;
+
+$('#P22_ITEM').change(function(){
+    if ($v('P22_ITEM') == "s"){
+        $x_Show("comp_recv");
+        apex.region('comp_recv').refresh();
+        $x_Show("incmp_rec");
+        apex.region('incmp_rec').refresh();
+        $x_Hide("blocks");
+        $x_Hide("blck");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("all_plots_det");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("unavlbl_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("hold_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("unavailble_plots_cat");
+        $x_Hide("tkn_plot_cat");
+        $x_Hide("comp_plot_cat");
+        $x_Hide("hold_plots_cat");
+        $x_Hide("incomp_plots_cat");
+        $x_Hide("total_plot_cat");
+        $x_Hide("available_plots_cat");
+        
+    }
+    else if($v('P22_ITEM') == "marla_dash"){
+        $x_Show("marla_nature");
+        $x_Hide("nature");
+        $x_Hide("comp_recv");
+        $x_Hide("incmp_rec");
+        $x_Hide("plot_dashboard");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("blocks");
+        $x_Hide("blck");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("all_plots_det");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("plot");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("price_dashboard");
+        $x_Hide("unavlbl_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("hold_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("hold_marla_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("available_plots_cat");
+        $x_Hide("unavailble_plots_cat");
+        $x_Hide("tkn_plot_cat");
+        $x_Hide("comp_plot_cat");
+        $x_Hide("hold_plots_cat");
+        $x_Hide("incomp_plots_cat");
+        $x_Hide("total_plot_cat");
+        
+    }
+    else if($v('P22_ITEM') == "marla_natur"){
+        $x_Show("marla_dashboard");
+        apex.region("marla_dashboard").refresh();
+        $x_Hide("comp_recv");
+        $x_Hide("incmp_rec");
+        $x_Hide("plot_dashboard");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("blocks");
+        $x_Hide("blck");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("all_plots_det");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("plot");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("price_dashboard");
+        $x_Hide("unavlbl_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("hold_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("hold_marla_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("available_plots_cat");
+        $x_Hide("unavailble_plots_cat");
+        $x_Hide("tkn_plot_cat");
+        $x_Hide("comp_plot_cat");
+        $x_Hide("hold_plots_cat");
+        $x_Hide("incomp_plots_cat");
+        $x_Hide("total_plot_cat");
+        
+    }
+     else if($v('P22_ITEM') == "unavlbl_marla_blck"){
+        
+        $x_Show("unavailble_marla_cat");
+        apex.region("unavailble_marla_cat").refresh();
+       // $x_Show("unavlbl_marla_block");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("total_marla_blck");
+        $x_Hide("all_plots_det");
+        $x_Hide("blocks");
+        $x_Hide("comp_rec_marla");
+        $x_Hide("incomp_rec_marla");
+        $x_Hide("comp_rec_marla");
+        $x_Hide("incomp_rec_marla");
+        $x_Hide("comp_rec_marla_blocks");
+        $x_Hide("incomp_rec_marla_blocks");
+        $x_Hide("paid_isnt");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("total_marla_blck");
+        $x_Hide("blocks");
+        $x_Hide("all_plots_det");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("tkn_marla_blck");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("tkn_marla_blck");
+        $x_Hide("hold_marla_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("hold_marla_cat");
+        $x_Hide("avlabl_marla_cat");
+        $x_Hide("tkn_marla_cat");
+        $x_Hide("total_marla_cat");
+        $x_Hide("comp_marla_cat");
+        $x_Hide("incomp_marla_cat");
+    }
+    else if($v('P22_ITEM') == "unavlbl_marla_blocks"){
+        $x_Show("unavlbl_marla_block");
+        apex.region('unavlbl_marla_block').refresh();
+    }
+    
+    else if($v('P22_ITEM') == "avl_marla"){
+        $x_Show("avlbl_marla");
+        apex.region("avlbl_marla").refresh();
+        $x_Show("tkn_marla");
+        apex.region("tkn_marla").refresh();
+        $x_Hide("total_marla_blck");
+        $x_Hide("all_plots_det");
+        $x_Hide("blocks");
+        $x_Hide("comp_rec_marla");
+        $x_Hide("incomp_rec_marla");
+        $x_Hide("comp_rec_marla");
+        $x_Hide("incomp_rec_marla");
+        $x_Hide("comp_rec_marla_blocks");
+        $x_Hide("incomp_rec_marla_blocks");
+        $x_Hide("paid_isnt");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("unavlbl_marla_block");
+        // $x_Hide("paid_lpc_report");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("hold_marla_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("hold_marla_cat");
+        $x_Hide("unavailble_marla_cat");
+        $x_Hide("tkn_marla_cat");
+        $x_Hide("total_marla_cat");
+        $x_Hide("comp_marla_cat");
+        $x_Hide("incomp_marla_cat");
+    }
+    else if($v('P22_ITEM') == "hold_marla_blck"){
+        //$x_Show("hold_marla_blocks");
+        $x_Show("hold_marla_cat");
+        apex.region("hold_marla_cat").refresh();
+        $x_Hide("total_marla_blck");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("tkn_marla_blck");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("avl_plot_det");
+        $x_Hide("comp_rec_marla");
+        $x_Hide("incomp_rec_marla");
+        $x_Hide("comp_rec_marla_blocks");
+        $x_Hide("incomp_rec_marla_blocks");
+        $x_Hide("paid_isnt");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("unavlbl_marla_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("all_plots_det");
+        $x_Hide("blocks");
+        $x_Hide("unavailble_marla_cat");
+        $x_Hide("avlabl_marla_cat");
+        $x_Hide("tkn_marla_cat");
+        $x_Hide("total_marla_cat");
+        $x_Hide("comp_marla_cat");
+        $x_Hide("incomp_marla_cat");
+    }
+    else if($v('P22_ITEM') == "hold_marla_blocks"){
+        $x_Show("hold_marla_blocks");
+        apex.region('hold_marla_blocks').refresh();
+    }
+    else if($v('P22_ITEM') == "unavlbl_marla_det"){
+        $x_Show("unavlbl_plot_details");
+        apex.region('unavlbl_plot_details').refresh();
+    }
+    else if($v('P22_ITEM') == "soldmarla"){
+        $x_Show("comp_rec_marla");
+        apex.region('comp_rec_marla').refresh();
+        $x_Show("incomp_rec_marla");
+        apex.region('incomp_rec_marla').refresh();
+        $x_Hide("total_marla_blck");
+        $x_Hide("blocks");
+        $x_Hide("all_plots_det");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("tkn_marla_blck");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("unavlbl_marla_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("hold_marla_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("hold_marla_cat");
+        $x_Hide("unavailble_marla_cat");
+        $x_Hide("avlabl_marla_cat");
+        $x_Hide("tkn_marla_cat");
+        $x_Hide("total_marla_cat");
+        $x_Hide("comp_marla_cat");
+        $x_Hide("incomp_marla_cat");
+    }
+    else if($v('P22_ITEM') == "cmp_rec_mrla_block"){
+        //$x_Show("comp_rec_marla_blocks");
+        $x_Show("comp_marla_cat");
+        apex.region('comp_marla_cat').refresh();
+        $x_Hide("incomp_rec_marla_blocks");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("incomp_marla_cat");
+        //$x_Hide("paid_lpc_report");
+    }
+    else if($v('P22_ITEM') == "comp_marla_blocks"){
+        $x_Show("comp_rec_marla_blocks");
+        apex.region('comp_rec_marla_blocks').refresh();
+    }
+    
+    else if($v('P22_ITEM') == "incmp_rec_mrla_block"){
+        //$x_Show("incomp_rec_marla_blocks");
+        $x_Show("incomp_marla_cat");
+        apex.region('incomp_marla_cat').refresh();
+        $x_Hide("comp_rec_marla_blocks");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("comp_marla_cat");
+    }
+    else if($v('P22_ITEM') == "incomp_marla_blocks"){
+        $x_Show("incomp_rec_marla_blocks");
+        apex.region('incomp_rec_marla_blocks').refresh();
+    }
+    
+    else if($v('P22_ITEM') == "avl_marla_blk"){
+        //$x_Show("avl_marla_blck");
+        $x_Show("avlabl_marla_cat");
+        apex.region('avlabl_marla_cat').refresh();
+        $x_Hide("tkn_marla_blck");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("hold_marla_cat");
+        $x_Hide("tkn_marla_cat");
+        $x_Hide("total_marla_cat");
+    }
+    else if($v('P22_ITEM') == "avlbl_marla_blocks"){
+        $x_Show("avl_marla_blck");
+        apex.region('avl_marla_blck').refresh();
+    }
+    
+    else if($v('P22_ITEM') == "tkn_marla_blk"){
+       // $x_Show("tkn_marla_blck");
+        $x_Show("tkn_marla_cat");
+        apex.region('tkn_marla_cat').refresh();
+        $x_Hide("avl_marla_blck");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("avlabl_marla_cat");
+        
+    }
+    else if($v('P22_ITEM') == "tkn_marla_blocks"){
+        $x_Show("tkn_marla_blck");
+        apex.region('tkn_marla_blck').refresh();
+    }
+    
+    else if($v('P22_ITEM') == "totl_mrla_blk"){
+        //$x_Show("total_marla_blck");
+        $x_Show("total_marla_cat");
+        apex.region('total_marla_cat').refresh();
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("tkn_marla_blck");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("avl_plot_det");
+        $x_Hide("comp_rec_marla");
+        $x_Hide("incomp_rec_marla");
+        $x_Hide("comp_rec_marla_blocks");
+        $x_Hide("incomp_rec_marla_blocks");
+        $x_Hide("paid_isnt");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("unavlbl_marla_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("hold_marla_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("hold_marla_cat");
+        $x_Hide("unavailble_marla_cat");
+        $x_Hide("avlabl_marla_cat");
+        $x_Hide("tkn_marla_cat");
+        $x_Hide("comp_marla_cat");
+        $x_Hide("incomp_marla_cat");
+      //  $x_Hide("paid_lpc_report");
+    }
+    else if($v('P22_ITEM') == "tot_marla_block"){
+        $x_Show("total_marla_blck");
+        apex.region('total_marla_blck').refresh();
+    }
+    
+    else if($v('P22_ITEM') == "plot_dash"){
+        $x_Show("nature");
+        $x_Hide("marla_nature");
+        $x_Hide("marla_dashboard");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("tkn_marla_blck");
+        $x_Hide("total_marla_blck");
+        $x_Hide("all_plots_det");
+        $x_Hide("blocks");
+        $x_Hide("comp_rec_marla");
+        $x_Hide("incomp_rec_marla");
+        $x_Hide("comp_rec_marla_blocks");
+        $x_Hide("incomp_rec_marla_blocks");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("price_dashboard");
+        $x_Hide("unavlbl_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("unavlbl_marla_block");
+        $x_Hide("hold_marla_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("available_plots_cat");
+        $x_Hide("tkn_plot_cat");
+        $x_Hide("comp_plot_cat");
+        $x_Hide("total_plot_cat");
+        $x_Hide("hold_marla_cat");
+        $x_Hide("unavailble_marla_cat");
+        $x_Hide("avlabl_marla_cat");
+        $x_Hide("tkn_marla_cat");
+        $x_Hide("total_marla_cat");
+        $x_Hide("comp_marla_cat");
+        $x_Hide("incomp_marla_cat");
+    }
+    else if($v('P22_ITEM') == "natur"){
+        $x_Show("plot_dashboard");
+        apex.region('plot_dashboard').refresh();
+        $x_Hide("marla_dashboard");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("tkn_marla_blck");
+        $x_Hide("total_marla_blck");
+        $x_Hide("all_plots_det");
+        $x_Hide("blocks");
+        $x_Hide("comp_rec_marla");
+        $x_Hide("incomp_rec_marla");
+        $x_Hide("comp_rec_marla_blocks");
+        $x_Hide("incomp_rec_marla_blocks");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("price_dashboard");
+        $x_Hide("unavlbl_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("unavlbl_marla_block");
+        $x_Hide("hold_marla_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("available_plots_cat");
+        $x_Hide("tkn_plot_cat");
+        $x_Hide("comp_plot_cat");
+        $x_Hide("total_plot_cat");
+        $x_Hide("hold_marla_cat");
+        $x_Hide("unavailble_marla_cat");
+        $x_Hide("avlabl_marla_cat");
+        $x_Hide("tkn_marla_cat");
+        $x_Hide("total_marla_cat");
+        $x_Hide("comp_marla_cat");
+        $x_Hide("incomp_marla_cat");
+    }
+//////////////////////////////////////////////////
+    else if($v('P22_ITEM') == "price_dash"){
+        $x_Show("price_dashboard");
+        $x_Hide("plot_dashboard");
+        $x_Hide("marla_dashboard");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("tkn_marla_blck");
+        $x_Hide("total_marla_blck");
+        $x_Hide("all_plots_det");
+        $x_Hide("blocks");
+        $x_Hide("comp_rec_marla");
+        $x_Hide("incomp_rec_marla");
+        $x_Hide("comp_rec_marla_blocks");
+        $x_Hide("incomp_rec_marla_blocks");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("unavlbl_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("unavlbl_marla_block");
+        $x_Hide("hold_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("hold_marla_blocks");
+        $x_Hide("hold_plots_details");
+    }
+
+    else if($v('P22_ITEM') == "unavlbl_plot_blocks"){
+        $x_Show("unavlbl_block");
+        apex.region('unavlbl_block').refresh();
+        $x_Hide("comp_recv");
+        $x_Hide("incmp_rec");
+        $x_Hide("blocks");
+        $x_Hide("blck");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("all_plots_det");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("hold_blocks");
+        $x_Hide("hold_plots_details");
+    }
+    else if($v('P22_ITEM') == "unavlbl_blck"){
+        $x_Show("unavailble_plots_cat");
+        apex.region('unavailble_plots_cat').refresh();
+        $x_Hide("comp_recv");
+        $x_Hide("incmp_rec");
+        $x_Hide("blocks");
+        $x_Hide("blck");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("all_plots_det");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("hold_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("available_plots_cat");
+        $x_Hide("tkn_plot_cat");
+        $x_Hide("comp_plot_cat");
+        $x_Hide("hold_plots_cat");
+        $x_Hide("total_plot_cat");
+    }
+    else if($v('P22_ITEM') == "hold_blck"){
+
+        $x_Show("hold_plots_cat");
+        apex.region('hold_plots_cat').refresh();
+        //$x_Show("hold_blocks");
+        $x_Hide("unavlbl_block");
+        $x_Hide("comp_recv");
+        $x_Hide("incmp_rec");
+        $x_Hide("blocks");
+        $x_Hide("blck");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("all_plots_det");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("unavailble_plots_cat");
+        $x_Hide("available_plots_cat");
+        $x_Hide("available_plots_cat");
+        $x_Hide("tkn_plot_cat");
+        $x_Hide("comp_plot_cat");
+        $x_Hide("total_plot_cat");
+    }
+    else if($v('P22_ITEM') == "hold_plot_blocks"){
+        $x_Show("hold_blocks");
+        apex.region('hold_blocks').refresh();
+    }
+    
+    else if($v('P22_ITEM') == "hold_plots_det"){
+        $x_Show("hold_plots_details");
+        apex.region('hold_plots_details').refresh();
+    }
+    
+    else if($v('P22_ITEM') == "unavlbl_plot_det"){
+        $x_Show("unavlbl_plot_details");
+        apex.region('unavlbl_plot_details').refresh();
+    }
+    
+    else if($v('P22_ITEM') == "com_rec_blck"){
+        $x_Hide("blocks");
+        $x_Show("comp_plot_cat");
+        apex.region('comp_plot_cat').refresh();
+        //$x_Show("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("blocks");
+        $x_Hide("blck");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("unavlbl_block");
+        $x_Hide("incomp_plots_cat");
+    }
+     else if($v('P22_ITEM') == "comp_plot_blocks"){
+        $x_Show("cmp_rec_blocks");
+        apex.region('cmp_rec_blocks').refresh();
+     }
+    else if($v('P22_ITEM') == "t"){
+        $x_Show("plot_rec_cmp");
+        apex.region('plot_rec_cmp').refresh();
+        $x_Hide("paid_instlmnt");
+        $x_Hide("paid_isnt");
+    }
+    else if($v('P22_ITEM') == "incomp_blck"){
+        $x_Hide("blocks");
+        $x_Show("incomp_plots_cat");
+        apex.region('incomp_plots_cat').refresh();
+        //$x_Show("incmp_blocks");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_cmp");  
+        $x_Hide("blocks");
+        $x_Hide("blck");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("marla");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("comp_plot_cat");
+    }
+    
+    else if($v('P22_ITEM') == "incomp_plot_blocks"){
+        $x_Show("incmp_blocks");
+        apex.region('incmp_blocks').refresh();
+    } 
+    else if($v('P22_ITEM') == "u"){
+        $x_Show("plot_rec_incmp");
+        apex.region('plot_rec_incmp').refresh();
+    }    
+    else if($v('P22_ITEM') == "v"){
+        $x_Show("paid_isnt");
+        apex.region('paid_isnt').refresh();
+     }
+    else if($v('P22_ITEM') == "w"){
+        $x_Show("blocks");
+        apex.region("blocks").refresh();
+    }
+    else if($v('P22_ITEM') == "x"){
+        //$x_Show("blck");
+        $x_Show("total_plot_cat");
+        apex.region("total_plot_cat").refresh();
+        $x_Hide("comp_recv");
+        $x_Hide("incmp_rec");
+        $x_Hide("comp_recv");
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("avl_plot_det");
+        $x_Hide("avlb_plot");
+        $x_Hide("tkn_plot");
+        $x_Hide("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("all_plots_det");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("unavlbl_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("hold_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("unavailble_plots_cat");
+        $x_Hide("available_plots_cat");
+        $x_Hide("tkn_plot_cat");
+        $x_Hide("comp_plot_cat");
+        $x_Hide("hold_plots_cat");
+        $x_Hide("incomp_plots_cat");
+    }
+    else if($v('P22_ITEM') == "tot_plot_block"){
+        $x_Show("blck");
+        apex.region("blck").refresh();
+    }
+    
+    else if($v('P22_ITEM') == "a"){
+        $x_Hide("comp_recv");
+        $x_Hide("incmp_rec");
+        $x_Hide("blocks");
+        $x_Hide("blck");
+        $x_Show("avlb_plot");
+        apex.region("avlb_plot").refresh();
+        $x_Show("tkn_plot");
+        apex.region("tkn_plot").refresh();
+        $x_Hide("plot_rec_cmp");
+        $x_Hide("plot_rec_incmp");
+        $x_Hide("paid_isnt");
+        $x_Hide("avl_plot_det");
+        $x_Hide("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("marla");
+        $x_Hide("plot");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("all_plots_det");
+        $x_Hide("paid_instlmnt");
+        $x_Hide("avlbl_marla");
+        $x_Hide("tkn_marla");
+        $x_Hide("avl_marla_blck");
+        $x_Hide("unavlbl_block");
+        $x_Hide("unavlbl_plot_details");
+        $x_Hide("hold_blocks");
+        $x_Hide("hold_plots_details");
+        $x_Hide("unavailble_plots_cat");
+        $x_Hide("available_plots_cat");
+        $x_Hide("tkn_plot_cat");
+        $x_Hide("comp_plot_cat");
+        $x_Hide("hold_plots_cat");
+        $x_Hide("incomp_plots_cat");
+        $x_Hide("total_plot_cat");
+    }
+    else if($v('P22_ITEM') == "apd"){
+        $x_Show("available_plots_cat");
+        apex.region("available_plots_cat").refresh();
+        // $x_Show("avl_blocks");
+        $x_Hide("tkn_blocks");
+        $x_Hide("tkn_plot_det");
+        $x_Hide("marla");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("marla");
+        $x_Hide("blocks");
+        $x_Hide("tkn_plot_cat");
+    }
+    else if($v('P22_ITEM') == "avalbl_plot_cat"){
+        $x_Show("avl_blocks");
+        apex.region("avl_blocks").refresh();
+    }
+    else if($v('P22_ITEM') == "avl"){
+        $x_Show("avl_plot_det");
+        apex.region("avl_plot_det").refresh();    
+    }
+    else if($v('P22_ITEM') == "tpd"){
+        $x_Show("tkn_plot_cat");
+        apex.region("tkn_plot_cat").refresh();
+        // $x_Show("tkn_blocks");
+        $x_Hide("avl_blocks");
+        $x_Hide("avl_plot_det");
+        $x_Hide("marla");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("cmp_rec_blocks");
+        $x_Hide("incmp_blocks");
+        $x_Hide("marla");
+        $x_Hide("blocks");
+        $x_Hide("available_plots_cat");
+    }
+    
+    else if($v('P22_ITEM') == "token_plot_cat"){
+        $x_Show("tkn_blocks");
+        apex.region("tkn_blocks").refresh();
+    }
+    else if($v('P22_ITEM') == "tkn"){
+        $x_Show("tkn_plot_det");
+        apex.region("tkn_plot_det").refresh();
+    }
+    else if($v('P22_ITEM') == "plots_det"){
+        $x_Show("all_plots_det");
+        apex.region("all_plots_det").refresh();
+    }
+    else if($v('P22_ITEM') == "paid_installments"){
+        $x_Show("paid_instlmnt");
+        apex.region("paid_instlmnt").refresh();
+    }
+});

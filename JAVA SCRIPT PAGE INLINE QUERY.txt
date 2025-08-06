@@ -1,7 +1,7 @@
 This code link in inline form in sub region
 javascript:$s('P16_DG_ID','#ID#');apex.region('DETAIL').refresh();openModal('DETAIL');
 javascript:$s('P43_RATE_ID','#HEAD_ID#');apex.region('DETAIL').refresh();openModal('DETAIL');  
-javascript:$s('P79_BOOKING_ID_1','#BOOKING_ID#');apex.region('arrear').refresh();openModal('arrear');     
+javascript:$s('P79_BOOKING_ID_1','#BOOKING_ID#');apex.region('arrear').refresh();openModal('arrear');      
 bi report query 
 javascript:var po_id = $v("P73_PO_ID");window.open("f?p=&APP_ID.:0:&SESSION.:PRINT_REPORT=PURCHASE_ORDER&PO_ID=" + po_id, "_blank");window.location.reload();apex.region('arrear').refresh();
   

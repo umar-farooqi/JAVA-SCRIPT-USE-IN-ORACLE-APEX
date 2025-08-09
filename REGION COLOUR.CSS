@@ -51,7 +51,7 @@
 #ITM td, #ITM th {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  /* Add shadow around cells */
 }
-
+    
 /* Responsive Design: Adjust column appearance for smaller screens */
 @media (max-width: 768px) {
     #ITM td, #ITM th {

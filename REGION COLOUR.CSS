@@ -1,0 +1,62 @@
+
+/* Style for Interactive Report columns */
+#ITM td {
+    font-size: 14px;  /* Increase font size for better readability */
+    padding: 12px;  /* Add padding around each cell */
+    border: 1px solid #ddd;  /* Soft border for a neat look */
+    text-align: left;  /* Left-align the text */
+    background-color: #f9f9f9;  /* Light grey background for cells */
+}
+
+/* First column with smaller size */
+#ITM td:first-child {
+    width: 100px;  /* Smaller width for the first column */
+}
+
+/* Style for Interactive Report column headers (labels) */
+#ITM th {
+    background-color: #3ba14f ;   /* Green background for headers */
+ /*    color: white !important;  White text color for headers */
+    font-weight: bold;  /* Make label text bold */
+    padding: 12px;  /* Add padding around the header text */
+    text-align: left;  /* Left-align the header text */
+    border: 1px solid #ddd;  /* Border around header cells */
+    white-space: nowrap; /* Prevent header text from wrapping */
+    overflow: hidden; /* Hide overflow if the text is too long */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+/* FOR THE ARROWS*/
+#ITM th span {
+    color: white !important;  
+}
+/* TEXT COLOR */
+#ITM th a {
+    color: white !important;  
+}
+
+/* Set a fixed width for the rest of the columns */
+#ITM th:not(:first-child), #ITM td:not(:first-child) {
+    width: 200px;  
+    word-wrap: break-word;  /* Break words when they overflow */
+    /*white-space: normal; Allow normal wrapping for table cells */
+}
+
+/* Hover effect for cells */
+#ITM td:hover {
+    background-color: #f1f1f1;  /* Change background color on hover */
+    cursor: pointer;  /* Change cursor to pointer for better interactivity */
+}
+
+/* Optional: Add subtle shadow to header and data cells */
+#ITM td, #ITM th {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  /* Add shadow around cells */
+}
+
+/* Responsive Design: Adjust column appearance for smaller screens */
+@media (max-width: 768px) {
+    #ITM td, #ITM th {
+        width: 120px;  /* Reduce column width on smaller screens */
+        padding: 8px;  /* Reduce padding for better space usage */
+    }
+}
+

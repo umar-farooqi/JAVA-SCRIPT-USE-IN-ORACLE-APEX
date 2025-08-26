@@ -5,3 +5,9 @@
         message: "Please Select Someone record...! ",
         unsafe: false
     }]);
+.
+
+
+
+-----
+javascript:window.open("f?p=&APP_ID.:0:&SESSION.:PRINT_REPORT=REQ_BANK_STATEMENT","_blank");

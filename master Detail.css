@@ -1,0 +1,27 @@
+  '<ul style="color:green;"><li>' ||
+     LISTAGG(COA.GL_CODE ||' - '|| COA.ACCOUNT_TITLE,'</li><li>') WITHIN GROUP (ORDER BY COA.GL_CODE ||' - '|| COA.ACCOUNT_TITLE) ||
+    '</li></ul>' AS ACCOUNT_TITLE,
+
+     '<ul style="color:green;"><li>' ||
+     LISTAGG(ADL.LOOKUP_DET_NAME, '</li><li>') WITHIN GROUP (ORDER BY ADL.LOOKUP_DET_NAME) ||
+    '</li></ul>' AS SALARY_ACCOUNT,
+
+     '<ul style="color:green;"><li>' ||
+     LISTAGG(ASR.FIRST_NAME, '</li><li>') WITHIN GROUP (ORDER BY ASR.FIRST_NAME) ||
+    '</li></ul>' AS EMP_REGISTRATION,
+
+       '<ul style="color:green;"><li>' ||
+     LISTAGG(AFTD.DR_AMOUNT, '</li><li>') WITHIN GROUP (ORDER BY AFTD.DR_AMOUNT) ||
+    '</li></ul>' AS DEBIT_AMOUNT,
+
+    '<ul style="color:green;"><li>' ||
+     LISTAGG(AFTD.CR_AMOUNT, '</li><li>') WITHIN GROUP (ORDER BY AFTD.CR_AMOUNT) ||
+    '</li></ul>' AS CREDIT_AMOUNT,
+
+     '<ul style="color:green;"><li>' ||
+     LISTAGG(AFTD.TR_DESCRIPTION, '</li><li>') WITHIN GROUP (ORDER BY AFTD.TR_DESCRIPTION) ||
+    '</li></ul>' AS NARRATION,
+    
+      '<ul style="color:green;"><li>' ||
+     LISTAGG(AFTD.REMARKS, '</li><li>') WITHIN GROUP (ORDER BY AFTD.REMARKS) ||
+    '</li></ul>' AS REMARKS

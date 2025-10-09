@@ -1,0 +1,62 @@
+DECLARE
+    v_sql         CLOB;
+    v_last_day    NUMBER;
+    v_month       VARCHAR2(2);
+    v_year        VARCHAR2(4);
+    v_first_date  DATE;
+    v_last_date   DATE;
+    v_current_date DATE;
+BEGIN
+    -- Get selected month/year or defaults
+    v_month := NVL(TO_CHAR(TO_NUMBER(APEX_UTIL.GET_SESSION_STATE('P644_MONTHS')), 'FM00'), TO_CHAR(SYSDATE, 'MM'));
+    v_year  := NVL(APEX_UTIL.GET_SESSION_STATE('P644_YEAR'), TO_CHAR(SYSDATE, 'YYYY'));
+
+    v_first_date := TO_DATE('01-' || v_month || '-' || v_year, 'DD-MM-YYYY');
+    v_last_date  := LAST_DAY(v_first_date);
+
+    DBMS_LOB.CREATETEMPORARY(v_sql, TRUE);
+
+    -- Base query
+    DBMS_LOB.APPEND(v_sql, '
+SELECT 
+    UM.USER_NAME AS SALE_OFFICER,
+    UM.USER_ID,
+    SUM(SOD.NO_BAGS) AS TOTAL_BAGS');
+
+    -- Loop over 1-31 days
+    FOR i IN 1 .. 31 LOOP
+        -- Compute the actual date for this day
+        v_current_date := v_first_date + (i - 1);
+
+        -- If the date exceeds the month, return NULL columns
+        IF v_current_date > v_last_date THEN
+            DBMS_LOB.APPEND(v_sql, ',
+    NULL AS "DAY_' || LPAD(i,2,'0') || '"');
+        ELSE
+            DBMS_LOB.APPEND(v_sql, ',
+    ''<a href="'' || GET_SECURE_LINK_SALE_BAGS(
+        MAX(CASE WHEN TRUNC(SO.ORDER_DATE) = TO_DATE(''' || TO_CHAR(v_current_date, 'DD-MON-YYYY') || ''',''DD-MON-YYYY'') THEN SOD.SOD_ID END),
+        MAX(CASE WHEN TRUNC(SO.ORDER_DATE) = TO_DATE(''' || TO_CHAR(v_current_date, 'DD-MON-YYYY') || ''',''DD-MON-YYYY'') THEN UM.USER_ID END),
+        TO_DATE(''' || TO_CHAR(v_current_date, 'DD-MON-YYYY') || ''',''DD-MON-YYYY'')
+    ) || ''">'' ||
+    NVL(SUM(CASE WHEN TRUNC(SO.ORDER_DATE) = TO_DATE(''' || TO_CHAR(v_current_date, 'DD-MON-YYYY') || ''',''DD-MON-YYYY'') THEN SOD.NO_BAGS END),null) ||
+    ''</a>'' AS "DAY_' || LPAD(i,2,'0') || '"');
+        END IF;
+    END LOOP;
+
+    -- From, joins, where
+    DBMS_LOB.APPEND(v_sql, '
+FROM AB_SO_ORDER_HEAD SO
+LEFT JOIN AB_SO_ORDER_DET SOD ON SOD.SO_ID = SO.SO_ID
+LEFT JOIN AB_UM_APPLICATION_USERS UM ON UM.USER_ID = SO.SALE_OFFER_ID
+WHERE SO.SO_TYPE IN (''SALE ORDER'', ''ASO'' )
+  AND SO.ORG_ID = :GV_ORG_ID
+  AND SO.STATUS = ''Y''
+  AND SOD.STATUS = ''Y''
+  AND UM.USER_ID IS NOT NULL
+  AND SO.ORDER_DATE BETWEEN TO_DATE(''' || TO_CHAR(v_first_date, 'DD-MON-YYYY') || ''',''DD-MON-YYYY'') 
+                      AND TO_DATE(''' || TO_CHAR(v_last_date, 'DD-MON-YYYY') || ''',''DD-MON-YYYY'')
+GROUP BY UM.USER_NAME,UM.USER_ID');
+
+    RETURN v_sql;
+END;

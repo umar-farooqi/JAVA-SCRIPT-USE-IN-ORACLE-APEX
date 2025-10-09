@@ -60,3 +60,12 @@ GROUP BY UM.USER_NAME,UM.USER_ID');
 
     RETURN v_sql;
 END;
+
+
+
+
+---- month lov ---------------
+SELECT TO_CHAR(TO_DATE(LEVEL, 'MM'), 'Month') AS DISPLAY_VALUE,
+       TO_CHAR(LEVEL, 'FM00') AS RETURN_VALUE
+FROM DUAL
+CONNECT BY LEVEL <= 12

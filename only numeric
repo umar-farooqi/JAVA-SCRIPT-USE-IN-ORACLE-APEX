@@ -1,3 +1,5 @@
+//  this code put in the function global option
+
 function restrictNumericInput() {
     // Add event listener to elements with class 'only-numeric'
     document.querySelectorAll('.only-numeric').forEach(function(element) {

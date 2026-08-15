@@ -50,4 +50,25 @@ $('#P13_HOLD_TYPE').change(function(){
 
 
 
-https://fallacious-mountain.surge.sh/
+$('#P1307_REC_ID').change(function () {
+
+    if ($v('P1307_REC_ID') === '4949') {
+
+        $x_Show('AMST');
+        $x_Hide('PCB');
+
+    } 
+    else if ($v('P1307_REC_ID') === '4726') {
+
+        $x_Show('PCB');
+        $x_Hide('AMST');
+
+    } 
+    else {
+
+        $x_Show('AMST');
+        $x_Hide('PCB'); 
+
+    }
+
+});

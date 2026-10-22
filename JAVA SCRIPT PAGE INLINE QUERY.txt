@@ -16,6 +16,10 @@ class="t-Button t-Button--simple t-Button--hot t-Button--stretch"
 button css attach camera icon
 class="t-Button t-Button--simple t-Button--hot t-Button--stretch"
 
+Button css black background white color
+
+class="t-Button t-Button--secondary t-Button--hot t-Button--stretch"
+
   
 ======================================================
 this code link in other page 
